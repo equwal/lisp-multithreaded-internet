@@ -4,7 +4,7 @@ Multithreaded internet for Common Lisp. SSL supported.
 
 clone into `~/common-lisp` or your ASDF directory for your system
 
-load ~/common-lisp/multi-internet.asd into your interpreter
+load `~/common-lisp/lisp-multithreaded-internet/code/multi-internet.asd` into your interpreter
 
 install quicklisp
 

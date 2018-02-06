@@ -1,10 +1,10 @@
 # lisp-multithreaded-internet
 Multithreaded internet for Common Lisp. SSL supported.
 # Installation
-    clone into `~/common-lisp` or your ASDF directory for your system
-    load ~/common-lisp/multi-internet.asd into your interpreter
-    install quicklisp
-    run
+clone into `~/common-lisp` or your ASDF directory for your system
+load ~/common-lisp/multi-internet.asd into your interpreter
+install quicklisp
+execute:
 ```
 > (ql:quickload :bordeaux-threads)
 > (ql:quickload :drakma)

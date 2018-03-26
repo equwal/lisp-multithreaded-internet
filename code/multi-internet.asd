@@ -3,10 +3,10 @@
 (in-package :multi)
 (defsystem :multi
   :description "Multithreaded internet"
-  :version "0"
+  :version "1"
   :author "Spenser Truex <spensertruexonline@gmail.com>"
   :license "Free"
-  :depends-on (:drakma :cl-json :bordeaux-threads)
+  :depends-on (:drakma :uiop :bordeaux-threads)
   :serial t
   :components ((:file "packages")
 	       (:file "multithreading")))

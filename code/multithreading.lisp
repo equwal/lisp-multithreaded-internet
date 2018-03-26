@@ -1,9 +1,5 @@
 (in-package :multi)
-;;; Work on DEFGLOBAL global lexical variables for SBCL, it is requested!
-#|(defmacro let-pseudoglobal (bindings &body body)
-  "Looks like a global, but isn't! Acts like a let. Required for threading lexical variables."
-  `(let (,@(collect (bind bindings)
-		   (list (car bind) '(gensym))))))|#
+;;; Work on DEFGLOBAL global lexical variables for SBCL, it is requested! Let-pseudoglobals was on the right track, but it looks like the compiler must be modified.
 (defmacro collect (var-and-list &body body)
   (let ((collector (gensym)))
     `(let ((,collector nil))
@@ -20,7 +16,7 @@
   `(multiple-value-bind ,vars
        ,value-form
      ,@body))
-(uiop:chdir (toplevel-dir))
+(uiop::chdir (toplevel-dir))
 (defvar *log-file* (get-file-in-toplevel "log" "txt"))
 (defun log-result (code-result)
   (with-open-file (s *log-file*

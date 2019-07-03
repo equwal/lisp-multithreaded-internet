@@ -15,6 +15,11 @@
   "Uri should be 'http(s)://domainname.blah.toplevel/blah/blah/blah'"
   (drakma-no-octets uri))
 (defun multiuri (&rest urilist)
+  "Deprecated function, use `uri' instead!"
+  (progn (warn "Multiuri is deprecated, use `uri' instead. Consider:
+multi::multiuri vs multi:uri. Isn't that a better name?")
+         (apply #'uri urilist)))
+(defun uri (&rest urilist)
   (let ((lock (gensym))
 	(list (gensym))
 	(uri (gensym)))

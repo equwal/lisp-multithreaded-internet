@@ -1,0 +1,37 @@
+#+TITLE:Multithreaded Internet
+#+AUTHOR: Spenser Truex
+#+EMAIL: web@spensertruex.com
+
+Multithreaded internet for Common Lisp. SSL supported.
+* Installation
+
+Clone into =~/common-lisp/lisp-multithreaded-internet/= or your ASDF directory
+for your system (check the value of =asdf:*central-registry*= for more info).
+
+Install quicklisp (see the [quicklisp website](https://www.quicklisp.org/beta/)).
+Execute:
+#+BEGIN_SRC lisp
+CL-USER> (asdf:load-system :multi)
+#+END_SRC
+* Usage
+To download websites using multithreading, execute:
+#+BEGIN_SRC lisp
+CL-USER> (multi:uri "uri1" "uri2" "uri3"...)
+#+END_SRC
+For example:
+#+BEGIN_SRC lisp
+CL-USER> (multi:uri "https://google.com" "https://yahoo.com")
+#+END_SRC
+Will download the google homepage and yahoo simultaneously, returning them as
+strings in a list.
+
+* Issues:
+Send a pull request if you improve it.
+- This could not be simpler, so perhaps none?
+- The current implementation is pretty naïve, failing to, for example, timeout.
+- Whichever URI takes the longest to download decides how long it takes to
+  execute.
+- It would be nice to have more control over flow in some situations.
+- There is virtually no error checking. Even "google.com" wont work without an
+  HTTP(S) in front of it.
+

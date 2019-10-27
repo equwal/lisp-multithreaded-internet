@@ -2,13 +2,13 @@
 #+AUTHOR: Spenser Truex
 #+EMAIL: web@spensertruex.com
 
-Multithreaded internet for Common Lisp. SSL supported.
+Concurrently download webpages. SSL supported. Dead simple.
 * Installation
 
 Clone into =~/common-lisp/lisp-multithreaded-internet/= or your ASDF directory
 for your system (check the value of =asdf:*central-registry*= for more info).
 
-Install quicklisp (see the [quicklisp website](https://www.quicklisp.org/beta/)).
+Install quicklisp (see the ([[https://www.quicklisp.org/beta/][quicklisp website]]).
 Execute:
 #+BEGIN_SRC lisp
 CL-USER> (asdf:load-system :multi)
